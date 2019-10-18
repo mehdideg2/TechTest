@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'myApp/style.css' %}">
+
+{#{% if latest_investments_list %}#}
+{#    <ul>#}
+{#    {% for investment in latest_investments_list %}#}
+{#        <li><a href="{% url 'myApp:detail' investment.id %}">{{ investment.titreoperation }}</a></li>#}
+{#    {% endfor %}#}
+{#    </ul>#}
+
+
+<div>
+    <div class="center">
+        <div>
+            <select type="text/css" class="selectBox">
+                <option value="">--Selectionner une ville--</option>
+                {% for row in field_names %}
+                    <option value="{{ row }}">{{ row }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <select type="text/css" class="selectBox">
+                <option value="">--Selectionner une ville--</option>
+                {% for row in field_names %}
+                    <option value="{{ row }}">{{ row }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div >
+            <button type="button" class="validateButton">
+                Refresh
+            </button>
+        </div>
+    </div>
+    <div>
+        <table type="text/css">
+            <thead>
+            {% for head in field_names %}
+               <th>{{ head }}</th>
+            {% endfor %}
+            </thead>
+            <tbody>
+            {% for row in data %}
+                <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

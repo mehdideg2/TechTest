@@ -9,9 +9,6 @@ class Investment(models.Model):
     def __str__(self):
         return self.titreoperation
 
-    # def notify(self):    # Notify older than 1 year
-    #     return self.notification_du_marche <= timezone.now() - datetime.timedelta(days=365)
-
     titreoperation = models.CharField(max_length=200)
     entreprise = models.CharField(max_length=200)
     annee_de_livraison = models.CharField(max_length=200)

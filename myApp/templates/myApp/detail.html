@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<h1>{{ investment.titreoperation }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<ul>
+{% for choice in investment.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>
