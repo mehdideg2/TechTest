@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django_filters.views import FilterView
 from django_tables2 import SingleTableView
 from myApp.tables import InvestmentTable
@@ -37,12 +37,10 @@ def investment_create_view(request):
     return render(request, "myApp/investment_create.html", context)
 
 
-def investment_detail_view(request):
-    form = InvestmentForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form = InvestmentForm()
+def investment_detail_view(request, investment_id):
+    investment = get_object_or_404(Investment, pk=investment_id)
+    form = InvestmentForm(instance=investment)
     context = {
-        'form': form
+        'form': form,
     }
     return render(request, "myApp/investment_detail.html", context)

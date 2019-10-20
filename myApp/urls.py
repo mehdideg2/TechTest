@@ -11,5 +11,5 @@ urlpatterns = [
     path('', views.InvestmentTableView.as_view()),
     path('api/', include(router.urls)),
     path('create/', views.investment_create_view, name='create'),
-    path('detail/', views.investment_detail_view, name='detail2'),
+    path('detail/<int:investment_id>/', views.investment_detail_view, name='detail2'),
 ]
