@@ -1,0 +1,26 @@
+
+{% load bootstrap %}
+{% load static %}
+{% load render_table from django_tables2 %}
+{% block content %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'myApp/style.css' %}">
+
+<head>
+    <title>Investments Table</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'myApp/images/favicon.ico' %}"/>
+  </head>
+
+<div>
+    <div class="center">
+        <form method="GET">
+            {{ filter.form|bootstrap}}
+            <button type="submit" class="validateButton">Search</button>
+        </form>
+    </div>
+    <div style="padding: 3px 20px;">
+        {% render_table filter.qs %}
+    </div>
+</div>
+{% endblock %}

@@ -7,10 +7,9 @@ app_name = 'myApp'
 router = routers.DefaultRouter()
 router.register(r'investments', views.InvestmentViewSet)
 
-
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('<int:investment_id>/', views.detail, name='detail'),
+    path('', views.InvestmentTableView.as_view()),
     path('api/', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('create/', views.investment_create_view, name='create'),
+    path('detail/', views.investment_detail_view, name='detail2'),
 ]

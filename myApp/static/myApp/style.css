@@ -58,12 +58,43 @@ tr:hover {background-color: #ddd;}
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
     background-color: #4CAF50;
+    cursor: pointer;
 }
+.validateButton:hover {background-color: #3e8e41}
+
+.validateButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.pagination {
+  width: 50%;
+  color: black;
+  float: right;
+  padding: 18px 16px;
+  text-decoration: none;
+}
+
+.pagination a {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: black;
+  float: center;
+  padding: 18px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #3e8e41;}
 
 .center {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     text-align: center;
-  margin: auto;
-  width: 60%;
-  padding: 10px;
+    margin: auto;
+    width: 40%;
+    padding: 10px;
 }
